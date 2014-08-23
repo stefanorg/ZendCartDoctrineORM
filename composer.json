@@ -1,0 +1,37 @@
+{
+    "name": "stefanorg/zendcartdoctrineorm",
+    "description": "Addon module form ZendCart to persist the cart with doctrine",
+    "type": "library",
+    "keywords": [
+        "doctrine",
+        "zendcart",
+        "module",
+        "library",
+        "zf2"
+    ],
+    "homepage": "https://github.com/stefanorg",
+    "authors": [
+        {
+            "name": "Stefano Corallo",
+            "email": "stefanorg@gmail.com",
+            "homepage": "http://stefanorg.github.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "zendcart/zendcart": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "ZendCartDoctrineORM": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
