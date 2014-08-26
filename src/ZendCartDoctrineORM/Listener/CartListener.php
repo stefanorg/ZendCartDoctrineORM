@@ -38,7 +38,7 @@ class CartListener implements ListenerAggregateInterface
         $this->listeners[] = $sharedEvents->attach('ZendCart\Service\Cart', CartEvent::EVENT_DELETE_CART_POST, array($this, 'onDeleteCartPost'));
         $this->listeners[] = $sharedEvents->attach('ZendCart\Service\Cart', CartEvent::EVENT_EMPTY_CART, array($this, 'onEmptyCart'));
         $this->listeners[] = $sharedEvents->attach('ZendCart\Service\Cart', CartEvent::EVENT_EMPTY_CART_POST, array($this, 'onEmptyCartPost'));
-        $this->listeners[] = $sharedEvents->attach('ZendCart\Service\Cart', CartEvent::EVENT_UPDATE_QUATITY, array($this, 'onUpdateQuantity'));
+        $this->listeners[] = $sharedEvents->attach('ZendCart\Service\Cart', CartEvent::EVENT_UPDATE_QUANTITY, array($this, 'onUpdateQuantity'));
         $this->listeners[] = $sharedEvents->attach('ZendCart\Service\Cart', CartEvent::EVENT_UPDATE_QUANTITY_POST, array($this, 'onUpdateQuantityPost'));
     }
 
