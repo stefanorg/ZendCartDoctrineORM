@@ -1,4 +1,6 @@
 ZendCartDoctrineORM
 
+- 2014-08-28 release 0.1.3:
+	* bug fix in cart listener and hydrator
 - 2014-08-23 release 0.1:
         * Initial release
