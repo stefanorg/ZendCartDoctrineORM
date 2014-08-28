@@ -141,10 +141,12 @@ class CartListener implements ListenerAggregateInterface
         $data = $e->getCartItem();
         //recuper item tramite cartid e itemtoken
         $cartItem = $this->cartService->findItemBy($cartId, $itemToken);
-        throw new \Exception("No cart item found for cartId: $cartId and token: $itemToken");
+        if($cartItem){
+            $this->cartService->getHydrator()->hydrate($data, $cartItem);
+            $this->cartService->updateCartItem($cartItem);
+        }
+//        throw new \Exception("No cart item found for cartId: $cartId and token: $itemToken");
 
-        $this->cartService->getHydrator()->hydrate($data, $cartItem);
-        $this->cartService->updateCartItem($cartItem);
     }
 
     /**
