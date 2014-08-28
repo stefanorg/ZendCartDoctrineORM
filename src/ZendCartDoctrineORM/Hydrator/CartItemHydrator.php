@@ -31,7 +31,7 @@ class CartItemHydrator implements HydratorInterface
             'vat'                    => $object->getVat() ?: 0,
             'itemToken'              => $object->getItemToken(),
             'name'                   => $object->getName(),
-            'date'                   => $object->getDate() ? $object->getDate()->format('Y-m-d H:i:s') : Datetime::createFromFormat('Y-m-d H:i:s', $config['date']),
+            'date'                   => $object->getDate() ? $object->getDate()->format('Y-m-d H:i:s') : Datetime::createFromFormat('Y-m-d H:i:s', new Datetime()),
             'options'                => $object->getOptions() ?: array()
         );
 
@@ -45,7 +45,7 @@ class CartItemHydrator implements HydratorInterface
             ->setPrice($data['price'])
             ->setQty($data['qty'])
             ->setVat($data['vat'])
-            ->setDate(Datetime::createFromFormat('Y-m-d H:i:s', $config['date']))
+            ->setDate(Datetime::createFromFormat('Y-m-d H:i:s', $data['date']))
             ->setItemToken($data['itemToken'])
             ->setName($data['name'])
             ->setOptions($data['options']);
